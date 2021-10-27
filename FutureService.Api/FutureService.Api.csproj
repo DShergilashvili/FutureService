@@ -19,4 +19,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Todo\AutoMapperProfiles\" />
+    <Folder Include="Features\Todo\Commands\" />
+    <Folder Include="Features\Todo\Endpoints\" />
+    <Folder Include="Features\Todo\Handlers\" />
+    <Folder Include="Features\Todo\Queries\" />
+  </ItemGroup>
+
 </Project>
