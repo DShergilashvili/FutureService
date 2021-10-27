@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FutureService.Api.Models;
 
 namespace FutureService.Api.Data
 {
@@ -7,5 +7,8 @@ namespace FutureService.Api.Data
         public FutureServiceDbContext(DbContextOptions options) : base(options)
         {
         }
+
+        public DbSet<TodoItem> TodoItems { get; set; }
+
     }
 }
