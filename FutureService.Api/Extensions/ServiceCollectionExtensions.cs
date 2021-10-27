@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace TFutureService.Api.Extensions
+﻿namespace TFutureService.Api.Extensions
 {
     public static class ServiceCollectionExtensions
     {

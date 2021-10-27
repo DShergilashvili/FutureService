@@ -1,6 +1,4 @@
-﻿using FutureService.Api.Abstractions;
-
-namespace FutureService.Api.Extensions
+﻿namespace FutureService.Api.Extensions
 {
     public static class ModuleExtensions
     {
