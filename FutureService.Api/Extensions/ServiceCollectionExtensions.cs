@@ -1,4 +1,6 @@
-﻿namespace TFutureService.Api.Extensions
+﻿using FutureService.Dal;
+
+namespace FutureService.Api.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -8,12 +10,17 @@
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c => 
             {
-                c.SwaggerDoc("Test API", new() { Title = builder.Environment.ApplicationName, Version="v1"});
+                c.SwaggerDoc("v1", new() { Title = builder.Environment.ApplicationName, Version="v1"});
                 c.TagActionsBy(ta =>
                 {
                     return new List<string> { ta.ActionDescriptor.DisplayName! };
                 });
             });
+
+            builder.Services.AddDbContext<FutureServiceDbContext>(opt =>
+               opt.UseSqlite(builder.Configuration.GetConnectionString("Default")));
+
+
             builder.Services.AddMediatR(typeof(Program));
             builder.Services.AddAutoMapper(typeof(Program));
             return services;

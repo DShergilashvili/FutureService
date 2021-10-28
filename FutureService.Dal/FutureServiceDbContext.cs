@@ -1,8 +1,9 @@
-﻿using FutureService.Api.Models;
+﻿using FutureService.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace FutureService.Api.Data
+namespace FutureService.Dal
 {
-    public class FutureServiceDbContext: DbContext
+    public class FutureServiceDbContext : DbContext
     {
         public FutureServiceDbContext(DbContextOptions options) : base(options)
         {

@@ -1,4 +1,6 @@
-﻿namespace FutureService.Api.Features.Todo
+﻿using FutureService.Api.Features.Todo.Endpoints;
+
+namespace FutureService.Api.Features.Todo
 {
     public class TodoModule : IModule
     {
@@ -6,6 +8,8 @@
         private IMapper _mapper;
         public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
         {
+            new TodoReadsEndpoint(_mediator).RegisterRoutes(endpoints);
+            new TodoWritesEndpoint(_mediator).RegisterRoutes(endpoints);
             return endpoints;
         }
 
