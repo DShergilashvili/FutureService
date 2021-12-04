@@ -13,6 +13,10 @@ namespace FutureService.Api.Features.Errors
 
         public WebApplicationBuilder RegisterModule(WebApplicationBuilder builder)
         {
+            builder.Services.AddHttpContextAccessor();
+
+            builder.Services.AddScoped<IErrorPropertiesFactory, ErrorPropertiesFactory>();
+
             return builder;
         }
     }

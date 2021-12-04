@@ -1,4 +1,5 @@
-﻿using FutureService.Api.Features.Todo.Queries;
+﻿using FutureService.Api.Errors.Exceptions;
+using FutureService.Api.Features.Todo.Queries;
 
 namespace FutureService.Api.Features.Todo.Endpoints
 {

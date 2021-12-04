@@ -8,9 +8,6 @@ namespace FutureService.Api.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services,
             WebApplicationBuilder builder)
         {
-            builder.Services.AddHttpContextAccessor();
-            builder.Services.AddScoped<IErrorPropertiesFactory, ErrorPropertiesFactory>();
-
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c => 
             {
