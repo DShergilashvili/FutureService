@@ -10,6 +10,8 @@
                 app.UseSwaggerUI();
             }
 
+            app.UseExceptionHandler("/error");
+
             app.UseHttpsRedirection();
 
             return app;

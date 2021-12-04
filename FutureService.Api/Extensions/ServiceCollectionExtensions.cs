@@ -1,4 +1,5 @@
-﻿using FutureService.Dal;
+﻿using FutureService.Api.Errors.ErrorPropertiesFactory;
+using FutureService.Dal;
 
 namespace FutureService.Api.Extensions
 {
@@ -7,6 +8,9 @@ namespace FutureService.Api.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services,
             WebApplicationBuilder builder)
         {
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddScoped<IErrorPropertiesFactory, ErrorPropertiesFactory>();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c => 
             {
@@ -19,7 +23,6 @@ namespace FutureService.Api.Extensions
 
             builder.Services.AddDbContext<FutureServiceDbContext>(opt =>
                opt.UseSqlite(builder.Configuration.GetConnectionString("Default")));
-
 
             builder.Services.AddMediatR(typeof(Program));
             builder.Services.AddAutoMapper(typeof(Program));
