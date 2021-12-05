@@ -1,7 +1,4 @@
 using FutureService.Api.Extensions;
-using FutureService.Api.Localizer;
-using Microsoft.AspNetCore.Localization;
-using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
