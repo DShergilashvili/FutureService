@@ -1,5 +1,6 @@
-﻿using FutureService.Api.Errors.ErrorPropertiesFactory;
+﻿using FutureService.Api.Localizer;
 using FutureService.Dal;
+using Microsoft.Extensions.Localization;
 
 namespace FutureService.Api.Extensions
 {
@@ -9,6 +10,10 @@ namespace FutureService.Api.Extensions
             WebApplicationBuilder builder)
         {
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSingleton<LocalizationMiddleware>();
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
+
             builder.Services.AddSwaggerGen(c => 
             {
                 c.SwaggerDoc("v1", new() { Title = builder.Environment.ApplicationName, Version="v1"});
